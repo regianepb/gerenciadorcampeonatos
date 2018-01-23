@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row justify-content-sm-center">
+        <div class="col-sm-8">
+            <h2 class="title">{{vm.title}}</h2>
+            <form>
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" ng-model="vm.record.nome" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Apelido</label>
+                    <input type="text" ng-model="vm.record.apelido" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Telefone</label>
+                    <input type="text" ng-model="vm.record.celular" class="form-control">
+                </div>       
+                <div class="form-group">
+                    <label>Posição</label>
+                    <select 
+                      class="form-control" 
+                      ng-model="vm.record.posicao"
+                      ng-options="posicao as posicao.descricao for posicao in vm.posicoes track by posicao.id">
+                    </select>
+                </div>       
+                <button ng-click="vm.save()" type="button" class="btn btn-primary btn-lg">Salvar Registro</button>
+                <a ui-sref="jogador.list" class="btn btn-danger">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
